@@ -29,8 +29,10 @@ public class Main {
             switch (opcao) {
 
                 case 1:
+                    sc.nextLine();
+
                     System.out.println("Nome:");
-                    String nome = sc.next();
+                    String nome = sc.nextLine();
 
                     Cliente cliente = new Cliente(nome, "000");
 
@@ -97,6 +99,12 @@ public class Main {
                     break;
 
                 case 5:
+                    for (Conta contaListada : banco.getContas()){
+                        System.out.println(contaListada);
+                    }
+                    break;
+
+                case 6:
                     System.out.println("Número da conta:");
                     num = sc.nextInt();
 
@@ -104,12 +112,6 @@ public class Main {
 
                     if (c != null){
                         c.fecharConta();
-                    }
-                    break;
-
-                case 6:
-                    for (Conta contaListada : banco.getContas()){
-                        System.out.println(contaListada);
                     }
                     break;
             }
